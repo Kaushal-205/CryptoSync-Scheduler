@@ -1,6 +1,6 @@
 import { TronWeb } from 'tronweb';
 import fs from 'fs';
-import poolContractABI from '../cryptosync-frontend/abis/PoolContract.json' assert { type: 'json' };
+import poolContractABI from './PoolContract.json' assert { type: 'json' };
 import dotenv from "dotenv";
 import axios from 'axios';
 
@@ -41,7 +41,7 @@ async function checkAndRebalancePools() {
       if (pool.poolAddress == null) {
         continue;
       }
-      // console.log("Pool in checkAndRebalance", pool);
+      console.log("Pool in checkAndRebalance", pool);
       await checkAndRebalance(pool);
     }
 
