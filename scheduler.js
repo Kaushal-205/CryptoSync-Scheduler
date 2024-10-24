@@ -41,7 +41,7 @@ async function checkAndRebalancePools() {
       if (pool.poolAddress == null) {
         continue;
       }
-      console.log("Pool in checkAndRebalance", pool);
+      // console.log("Pool in checkAndRebalance", pool);
       await checkAndRebalance(pool);
     }
 
@@ -90,7 +90,7 @@ async function checkAndRebalance(pool) {
         callValue: 0,
       });
 
-      
+      await new Promise(resolve => setTimeout(resolve, 2000));
 
       console.log(`Rebalanced pool ${pool.poolAddress}: ${tx}`);
 
